@@ -68,3 +68,34 @@ Please note that the instructions provided here are high-level and may require f
 Remember to adhere to AWS best practices, such as securing your EC2 instance, managing access, and monitoring resource usage.
 
 Feel free to reach out if you have any further questions or need additional assistance!
+
+
+To run the code and generate the vulnerability dataset, follow these steps:
+
+1. Set up the Python Environment:
+   - Ensure that Python is installed on your system. You can download Python from the official website: https://www.python.org/downloads/
+   - Install the required dependencies by running the following command in your terminal or command prompt:
+
+     ```shell
+     pip install csv
+     ```
+
+2. Save the Code:
+   - Copy the provided code snippet and save it in a file named `generate_vulnerability_dataset.py` on your local machine.
+
+3. Run the Code:
+   - Open a terminal or command prompt.
+   - Navigate to the directory where you saved the `generate_vulnerability_dataset.py` file.
+   - Run the Python script by executing the following command:
+
+     ```shell
+     python generate_vulnerability_dataset.py
+     ```
+
+4. Verify the Dataset:
+   - After running the script, a file named `vulnerability_dataset.csv` will be generated in the same directory.
+   - You can open the file using a spreadsheet software like Microsoft Excel or Google Sheets to verify the contents of the dataset.
+
+That's it! You have successfully generated the vulnerability dataset. You can now use this dataset for further analysis or integration into your AI-aided cybersecurity project.
+
+Remember to customize the dataset generation code based on your specific requirements and expand it with appropriate vulnerability details, such as severity, CVSS scores, or affected software versions.
