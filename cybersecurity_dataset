@@ -1,0 +1,44 @@
+import csv
+import random
+import string
+
+# Number of rows in the dataset
+num_rows = 2000
+
+# Percentage of normal traffic (95%)
+normal_percentage = 0.95
+
+# Percentage of anomaly (5%)
+anomaly_percentage = 0.05
+
+# Generate the header row
+header = ['Timestamp', 'Source IP', 'Destination IP', 'Protocol', 'Status']
+
+# Generate the data rows
+data_rows = []
+for _ in range(num_rows):
+    if random.random() < normal_percentage:
+        # Generate normal traffic
+        timestamp = '2023-07-16 12:00:00'
+        source_ip = '.'.join(str(random.randint(0, 255)) for _ in range(4))
+        dest_ip = '.'.join(str(random.randint(0, 255)) for _ in range(4))
+        protocol = random.choice(['TCP', 'UDP', 'HTTP'])
+        status = 'Normal'
+    else:
+        # Generate anomaly
+        timestamp = '2023-07-16 12:00:00'
+        source_ip = '.'.join(str(random.randint(0, 255)) for _ in range(4))
+        dest_ip = '.'.join(str(random.randint(0, 255)) for _ in range(4))
+        protocol = random.choice(['TCP', 'UDP', 'HTTP'])
+        status = 'Anomaly'
+
+    data_rows.append([timestamp, source_ip, dest_ip, protocol, status])
+
+# Shuffle the data rows
+random.shuffle(data_rows)
+
+# Write the dataset to a CSV file
+with open('cybersecurity_dataset.csv', 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(header)
+    writer.writerows(data_rows)
